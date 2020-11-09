@@ -3,7 +3,7 @@ package com.example.myfirstkmmsample.androidApp
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myfirstkmmsample.shared.RandomUserApi
+import com.example.myfirstkmmsample.shared.api.RandomUserApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

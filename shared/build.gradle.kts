@@ -28,7 +28,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-core:1.4.1")
-                implementation("io.ktor:ktor-client-cio:1.4.1")
+                implementation("io.ktor:ktor-client-okhttp:1.4.1")
+                implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
             }
         }
