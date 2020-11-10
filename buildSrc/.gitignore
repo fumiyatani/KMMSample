@@ -1,0 +1,12 @@
+# 参考 : https://github.com/DroidKaigi/conference-app-2020/blob/master/buildSrc/.gitignore
+*.iml
+.gradle
+/local.properties
+/.idea/caches/build_file_checksums.ser
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild

@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import dependencies.Deps
 
 plugins {
     kotlin("multiplatform")
@@ -27,6 +28,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(Deps.Kotlin.coroutinesCore)
                 implementation("io.ktor:ktor-client-core:1.4.1")
                 implementation("io.ktor:ktor-client-json:1.4.1")
                 implementation("io.ktor:ktor-client-serialization:1.4.1")
@@ -41,6 +43,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation(Deps.Kotlin.coroutinesCore)
                 implementation("io.ktor:ktor-client-android:1.4.1")
                 implementation("com.google.android.material:material:1.2.1")
             }
