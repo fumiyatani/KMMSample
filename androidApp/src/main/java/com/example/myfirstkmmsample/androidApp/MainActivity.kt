@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import coil.load
 import com.example.myfirstkmmsample.shared.UserRepositoryImpl
 
 class MainActivity : AppCompatActivity() {
@@ -26,12 +27,13 @@ class MainActivity : AppCompatActivity() {
         viewModel.userDataLiveData.observe(this) { state ->
             when (state) {
                 is State.Success -> {
-                    // todo GradleでImageViewを入れる
-                    fullNameTextView.text = state.data.name.getFullName()
+                    with(state) {
+                        userImageView.load(data.picture.large)
+                        fullNameTextView.text = state.data.name.getFullName()
+                    }
                     progressBar.visibility = View.GONE
                 }
                 is State.Failure -> {
-                    // todo エラーハンドリング
                     Toast.makeText(this,"エラーが発生しました。", Toast.LENGTH_LONG).show()
                     progressBar.visibility = View.GONE
                 }
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        @Suppress("unused")
         const val TAG = "MainActivity"
     }
 }
