@@ -17,4 +17,4 @@ rootProject.name = "MyFirstKMMSample"
 
 include(":androidApp")
 include(":shared")
-
+include(":iosApp")
